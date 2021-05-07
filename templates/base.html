@@ -20,6 +20,12 @@
         <link href="{% static '/' %}/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{% static '/' %}/css/app.min.css"  rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+
+
+        {% block style %}
+        
+        {% endblock %}
 
     </head>
 
@@ -118,8 +124,8 @@
                                     <span key="t-dashboards">User Management</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="" key="t-default">Default</a></li>
-                                    <li><a href="dashboard-saas.html" key="t-saas">Saas</a></li>
+                                    <li><a href="{% url 'create_user' %}" key="t-default">Create User</a></li>
+                                    <li><a href="{% url 'admin_user_list' %}" key="t-saas">Admin User List</a></li>
                                     <li><a href="dashboard-crypto.html" key="t-crypto">Crypto</a></li>
                                     <li><a href="dashboard-blog.html" key="t-blog">Blog</a></li>
                                 </ul>
@@ -326,6 +332,11 @@
 
 
         <script src="{% static '/' %}/js/app.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+
+        {% block script %}
+        
+        {% endblock %}
     </body>
 
 <!-- Mirrored from themesbrand.com/skote-django/layouts/layouts-icon-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Apr 2021 17:53:22 GMT -->
